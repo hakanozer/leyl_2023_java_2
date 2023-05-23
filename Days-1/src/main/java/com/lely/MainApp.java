@@ -4,6 +4,7 @@ import com.lely.utils.EAction;
 import com.lely.utils.Profile;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class MainApp {
 
@@ -129,6 +130,15 @@ public class MainApp {
 
         String[] arr = obj.allArr("Ali", "Bilmem");
         System.out.println( arr[0] + arr[1] );
+
+        // Customer
+        Customer customer = new Customer("Serkan", 30);
+        System.out.println( customer.hashCode() );
+        Scanner scanner = new Scanner("");
+        customer.profile();
+        System.out.println( customer.size() );
+
+
 
 
     }
