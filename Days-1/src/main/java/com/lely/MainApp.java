@@ -1,6 +1,7 @@
 package com.lely;
 
 import com.lely.utils.EAction;
+import com.lely.utils.Profile;
 
 import java.util.Random;
 
@@ -117,6 +118,18 @@ public class MainApp {
 
         int callEnd = obj.call(77,66, EAction.sum);
         System.out.println( callEnd );
+
+        Profile profile = new Profile();
+        obj.changeProfile(profile);
+
+        obj.lines("line-1","line-2","line-3","line-4","line-5");
+
+        Profile pro = obj.getProfile("Bilirim");
+        System.out.println( pro.surname );
+
+        String[] arr = obj.allArr("Ali", "Bilmem");
+        System.out.println( arr[0] + arr[1] );
+
 
     }
 
