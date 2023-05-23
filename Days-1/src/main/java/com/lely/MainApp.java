@@ -1,5 +1,9 @@
 package com.lely;
 
+import com.lely.utils.EAction;
+
+import java.util.Random;
+
 public class MainApp {
 
     public static void main(String[] args) {
@@ -96,6 +100,23 @@ public class MainApp {
             System.out.println("Form Send..");
         }
 
+        // OOP
+        System.out.println("====================");
+        // object -> nesne üreti
+        // Class -> Sınıf
+
+        // obj -> nesne-> sınıf içindeki yeteneklerin kullanılması için gereklidir.
+        // Action -> üretilecek olan türdür.
+        // Action() -> sınıfın kurucu methodudur.
+        // nesne altındaki özelliklere (.) operatörü ile kullanım sağlanır.
+        Action obj = new Action();
+        System.out.println( obj.profileName );
+        obj.loginStatus();
+        String title = obj.appName();
+        System.out.println( title );
+
+        int callEnd = obj.call(77,66, EAction.sum);
+        System.out.println( callEnd );
 
     }
 
