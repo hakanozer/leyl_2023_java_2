@@ -4,6 +4,7 @@ public class ProfileImpl implements IProfile {
 
     @Override
     public String userProfileName(int userID) {
+        userStatus(userID);
         if (  userID == 10 )
             return "Serkan Bilsin";
         return null;
@@ -25,6 +26,11 @@ public class ProfileImpl implements IProfile {
 
     public void call() {
         System.out.println("Call Line");
+    }
+
+    @Override
+    public boolean userPasswordChange(int userID, String oldPassword, String newPassword) {
+        return false;
     }
 
 }

@@ -8,7 +8,7 @@ public class Base {
     }
 
     // değişime kapalı -> hizmet methodları
-    public int action( int num1, int num2 ) {
+    final public int action( int num1, int num2 ) {
         return num1 * num2;
     }
 
