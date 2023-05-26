@@ -19,16 +19,29 @@ public class XmlResult {
             Document doc = Jsoup.parse(stData, Parser.xmlParser());
             Elements elements = doc.getElementsByTag("Currency");
             for(Element item : elements) {
+                String kod = item.getAllElements().attr("kod");
                 String currencyName = item.getElementsByTag("CurrencyName").text();
                 String forexBuying = item.getElementsByTag("ForexBuying").text();
                 String forexSelling = item.getElementsByTag("ForexSelling").text();
-                Currency c = new Currency(currencyName, forexBuying, forexSelling);
+                Currency c = new Currency(kod, currencyName, forexBuying, forexSelling);
                 ls.add(c);
             }
         }catch (Exception ex) {
             System.err.println("Xml Error :" + ex);
         }
         return ls;
+    }
+
+    public Currency getKod( String kod ) {
+        List<Currency> list = xml();
+        Currency c = null;
+        for ( Currency item : list ) {
+            if ( item.getKod().toLowerCase().equals(kod.toLowerCase()) ) {
+               c = item;
+               break;
+            }
+        }
+        return c;
     }
 
 }

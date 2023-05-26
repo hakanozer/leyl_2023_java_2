@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 public class Currency {
 
+    private String kod;
     private String currencyName;
     private String forexBuying;
     private String forexSelling;
